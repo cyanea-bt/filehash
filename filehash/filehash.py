@@ -56,7 +56,7 @@ class ZlibHasherBase():
         containing only hexadecimal digists.  This may be used to exchange the
         value safely in email or other non-binary environments.
         """
-        return hex(self._digest).upper()[2:]
+        return '{:08X}'.format(self._digest)
 
     @abc.abstractmethod
     def copy(self):
